@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2 class="text-center">Timeline</h2>
+    <div class="d-flex flex-column justify-content-start m-5">
+        <div class="text-center">
+            <a class="btn btn-success" href="{{ url_for('postar')}}">Adicionar Postagem</a>
+        </div>
+        {% for postagem in postagens %}
+            <div class="card w-50 my-3">
+                <div class="card-header">
+                    <h5 class="card-title"><i class="bi bi-person-fill"></i> {{ postagem.estagiario }}</h5>
+                </div>
+                <div class="card-body">{{ postagem.mensagem }}</div>
+                <div class="card-footer"><i class="bi bi-clock-fill"></i> {{ postagem.data }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+

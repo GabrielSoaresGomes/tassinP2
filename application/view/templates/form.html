@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-center" >Adicionar Postagem</h2>
+<a class="btn btn-secondary" href="{{ url_for('timeline') }}">Timeline</a>
+<form id="form-postagem" method="POST" action="{{ url_for('postar') }}" class="text-center w-25 m-auto">
+    <label for="input-nome">Nome estagiário: </label>
+    <input required class="form-control py-2" name="nome" id="input-nome" />
+
+    <label for="input-mensagem">Mensagem: </label>
+    <textarea required class="form-control py-2" name="mensagem" id="input-mensagem" cols="30" rows="10" maxlength="200"></textarea>
+
+    <input class="btn btn-primary my-2 btn-submit" type="submit" value="Postar" />
+
+</form>
+{% endblock content %}
